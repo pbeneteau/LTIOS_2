@@ -1,41 +1,42 @@
 PODS:
-  - CryptoSwift (0.7.2)
-  - Firebase/Auth (4.3.0):
+  - CryptoSwift (0.8.1)
+  - Firebase/Auth (4.8.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.2.1)
-  - Firebase/Core (4.3.0):
-    - FirebaseAnalytics (= 4.0.4)
-    - FirebaseCore (= 4.0.8)
-  - Firebase/Database (4.3.0):
+    - FirebaseAuth (= 4.4.1)
+  - Firebase/Core (4.8.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.13)
+  - Firebase/Database (4.8.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.0)
-  - Firebase/Storage (4.3.0):
+    - FirebaseDatabase (= 4.1.3)
+  - Firebase/Storage (4.8.0):
     - Firebase/Core
-    - FirebaseStorage (= 2.0.2)
-  - FirebaseAnalytics (4.0.4):
+    - FirebaseStorage (= 2.1.1)
+  - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.2.1):
+  - FirebaseAuth (4.4.1):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.8):
+  - FirebaseCore (4.0.13):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseDatabase (4.1.0):
+  - FirebaseDatabase (4.1.3):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.4)
-  - FirebaseStorage (2.0.2):
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseStorage (2.1.1):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleMaps/Base (2.4.0)
-  - GooglePlaces (2.4.0):
-    - GoogleMaps/Base (= 2.4.0)
+  - FSPagerView (0.7.1)
+  - GoogleMaps/Base (2.5.0)
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -47,7 +48,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
-  - leveldb-library (1.18.3)
+  - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -60,19 +61,21 @@ PODS:
     - NexmoVerify/RequestSigning (~> 1.0.6)
   - NexmoVerify/DeviceProperties (1.0.7)
   - NexmoVerify/RequestSigning (1.0.7)
-  - PhoneNumberKit (2.0.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 2.0.0)
-    - PhoneNumberKit/UIKit (= 2.0.0)
-  - PhoneNumberKit/PhoneNumberKitCore (2.0.0)
-  - PhoneNumberKit/UIKit (2.0.0):
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
     - PhoneNumberKit/PhoneNumberKitCore
   - Pulsator (0.4.0)
-  - ReachabilitySwift (3)
+  - ReachabilitySwift (4.1.0)
   - SCLAlertView (0.7.0)
   - SnapKit (4.0.0)
-  - SwiftyJSON (3.1.4)
-  - TextFieldEffects (1.3.3)
-  - Whisper (5.0.0)
+  - Spring (1.0.5)
+  - SRCountdownTimer (1.0.1)
+  - SwiftyJSON (4.0.0)
+  - TextFieldEffects (1.4.0)
+  - Whisper (6.0.2)
 
 DEPENDENCIES:
   - CryptoSwift
@@ -80,6 +83,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FSPagerView
   - GooglePlaces
   - NexmoVerify
   - PhoneNumberKit
@@ -87,35 +91,40 @@ DEPENDENCIES:
   - ReachabilitySwift
   - SCLAlertView
   - SnapKit
+  - Spring
+  - SRCountdownTimer
   - SwiftyJSON
   - TextFieldEffects
   - Whisper
 
 SPEC CHECKSUMS:
-  CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
-  Firebase: 83283761a1ef6dc9846e03d08059f51421afbd65
-  FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
-  FirebaseAuth: d7f047fbeab98062b98ea933b8d934e0fb1190e2
-  FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
-  FirebaseDatabase: 607284a103e961d7f5863ee603cab5e85f443bd6
-  FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
-  FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
-  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
-  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
+  CryptoSwift: 4b07d5b508c1eb67bfa314a727b705f8048a85de
+  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
+  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
+  FirebaseDatabase: 7088bfc4af2cc00231bb36e1404fc2d7509eb4dc
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseStorage: ab08d1c93a2feffa038fdd6693088b310ab1e6c6
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NexmoVerify: f7dfa599a38ea865aafd9522cff02c333044b9cb
-  PhoneNumberKit: 073b3cef30c2a64ddcd623ea5953bc84bb5b3fc4
+  PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   Pulsator: a0e7c006790a576de63280b2f0552ea1c1b83ce0
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  TextFieldEffects: 8706f53525f1ce51c8921b7af32237caab50c467
-  Whisper: 051f25e704bf8992641ffd28b20d5682ddc5f5d3
+  Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
+  SRCountdownTimer: 187458addb1e88cae62eb5aa57f48d7888f8c18c
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
+  Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
 
-PODFILE CHECKSUM: b0e610054c56c1a5788f669d5a7e40e9a4a745ff
+PODFILE CHECKSUM: 6c146734ad38c1940846d61989edbdf73c0506a1
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0
