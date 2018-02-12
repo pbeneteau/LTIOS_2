@@ -319,7 +319,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
     
     @objc func checkCode(_ sender: AnyObject) {
         // check for no pin code
-        if (checkCodeField.text?.characters.count == 0) {
+        if (checkCodeField.text?.count == 0) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "No Pin Code Entered", message: "Please enter your pin code first.", preferredStyle: .alert)
             controller.addAction(action)
@@ -328,7 +328,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         }
     
         // check for pin < 4
-        if (checkCodeField.text?.characters.count < 4) {
+        if (checkCodeField.text?.count < 4) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "Invalid length", message: "Your pin code is too short.", preferredStyle: .alert)
             controller.addAction(action)
@@ -337,7 +337,7 @@ class VerifyUIController : UIViewController, CountryPickerDelegate, UIAlertViewD
         }
         
         // check for pin > 6
-        if (checkCodeField.text?.characters.count > 6) {
+        if (checkCodeField.text?.count > 6) {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             let controller = UIAlertController(title: "Invalid length", message: "Your pin code is too long.", preferredStyle: .alert)
             controller.addAction(action)

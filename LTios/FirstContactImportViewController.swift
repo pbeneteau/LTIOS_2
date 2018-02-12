@@ -12,7 +12,6 @@ class FirstContactImportViewController: UIViewController {
   
   var didSetupConstraints = false
   
-  let bg = UIImageView(image: #imageLiteral(resourceName: "RegisterationBG"))
   let mainTitle = FirstContactLabel()
   let contactImage = UIImageView(image: #imageLiteral(resourceName: "contactIcon"))
   let importButton = FirstImportButton()
@@ -30,7 +29,6 @@ class FirstContactImportViewController: UIViewController {
     successImage.alpha = 0.0
     successLabel.alpha = 0.0
     
-    view.addSubview(bg)
     view.addSubview(mainTitle)
     view.addSubview(contactImage)
     view.addSubview(importButton)
@@ -53,15 +51,7 @@ class FirstContactImportViewController: UIViewController {
   
   override func updateViewConstraints() {
     if !didSetupConstraints {
-      
-      bg.snp.makeConstraints { (make) -> Void in
-        make.width.equalTo(view.snp.width)
-        make.height.equalTo(view.snp.height)
-        make.centerX.equalTo(view.snp.centerX)
-        make.centerY.equalTo(view.snp.centerY)
-      }
-      
-      
+        
       contactImage.snp.makeConstraints { (make) -> Void in
         make.top.equalTo(view.snp.bottom).multipliedBy(0.22)
         make.centerX.equalTo(view.snp.centerX)
@@ -77,8 +67,8 @@ class FirstContactImportViewController: UIViewController {
       importButton.snp.makeConstraints { (make) -> Void in
         make.top.equalTo(contactImage.snp.bottom).offset(87)
         make.centerX.equalTo(view.snp.centerX)
-        make.width.equalTo(contactImage.snp.width)
-        make.height.equalTo(33)
+        make.width.equalTo(contactImage.snp.width).multipliedBy(1.4)
+        make.height.equalTo(45)
       }
       
       agreementsLabel.snp.makeConstraints { (make) -> Void in

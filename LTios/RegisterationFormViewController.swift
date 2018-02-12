@@ -11,9 +11,7 @@ import UIKit
 class RegisterationFormViewController: UIViewController {
   
   var didSetupConstraints = false
-  
-  let bg = UIImageView(image: #imageLiteral(resourceName: "RegisterationBG"))
-  
+    
   let descriptionLabel = RegisterFormLabel()
   let formView = RegisterForm()
   
@@ -31,7 +29,6 @@ class RegisterationFormViewController: UIViewController {
     
     formHeight = view.frame.height * CGFloat(0.3421052632)
     
-    view.addSubview(bg)
     view.addSubview(descriptionLabel)
     view.addSubview(formView)
     
@@ -59,13 +56,6 @@ class RegisterationFormViewController: UIViewController {
   
   override func updateViewConstraints() {
     if !didSetupConstraints {
-      
-      bg.snp.makeConstraints { (make) -> Void in
-        make.width.equalTo(view.snp.width)
-        make.height.equalTo(view.snp.height)
-        make.centerX.equalTo(view.snp.centerX)
-        make.centerY.equalTo(view.snp.centerY)
-      }
       
       descriptionLabel.snp.makeConstraints { (make) -> Void in
         make.top.equalTo(view.snp.bottom).multipliedBy(0.2)

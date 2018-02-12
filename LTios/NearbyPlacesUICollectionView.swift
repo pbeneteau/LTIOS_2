@@ -7,32 +7,43 @@
 //
 
 import UIKit
+import FSPagerView
 
 class NearbyPlacesUICollectionView: UICollectionView {
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)!
-  }
-  
-  override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-    let layout = UICollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
-    layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 80*3)
-    super.init(frame: CGRect(), collectionViewLayout: layout)
-    commonInit()
-  }
-  
-  func commonInit() {
     
-    allowsMultipleSelection = false
-    backgroundColor = .clear
+    let flowLayout = UICollectionViewFlowLayout()
     
-    frame = UIScreen.main.bounds
-    self.register(NearbyPlacesUICollectionViewCell.self, forCellWithReuseIdentifier: "nearbyPlaceCell")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
     
-    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_0")
-    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_1")
-    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_2")
-  }
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.7)
+        super.init(frame: CGRect(), collectionViewLayout: flowLayout)
+        commonInit()
+        
+    }
+    
+//    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        // check if the currentCenteredPage is not the page that was touched
+//        if let currentCenteredPage = flowLayout.currentCenteredPage, currentCenteredPage != indexPath.row {
+//            // trigger a scrollTo(index: animated:)
+//            collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+//        }
+//    }
+//
+    func commonInit() {
+        
+        allowsMultipleSelection = false
+        backgroundColor = .clear
+        
+        frame = UIScreen.main.bounds
+        self.register(NearbyPlacesUICollectionViewCell.self, forCellWithReuseIdentifier: "nearbyPlaceCell")
+        
+        //    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_0")
+        //    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_1")
+        //    register(NearbyPlacesHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "NearbyPlaceHeader_2")
+    }
 }
 

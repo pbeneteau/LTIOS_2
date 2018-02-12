@@ -66,6 +66,9 @@
 		386466281F85264D00C18D53 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386466271F85264D00C18D53 /* Labels.swift */; };
 		3864662A1F85267D00C18D53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386466291F85267D00C18D53 /* Fonts.swift */; };
 		3864662C1F8526B200C18D53 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864662B1F8526B200C18D53 /* Colors.swift */; };
+		38F41553201A795E0057E5ED /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F41552201A795E0057E5ED /* UserProfileViewController.swift */; };
+		38F4155A201A7E8D0057E5ED /* InteractiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F41559201A7E8D0057E5ED /* InteractiveViewController.swift */; };
+		38F97166202DC83E00C820A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F97165202DC83E00C820A5 /* MapKit.framework */; };
 		98CA6EFB58DD7B6491BEE45C /* Pods_LTiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63D386CE37523546D50354D /* Pods_LTiosUITests.framework */; };
 		9A502145D7C38C05BE014890 /* Pods_LTios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACEF576580160AAA28DC6F2 /* Pods_LTios.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +156,9 @@
 		386466271F85264D00C18D53 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		386466291F85267D00C18D53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3864662B1F8526B200C18D53 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		38F41552201A795E0057E5ED /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		38F41559201A7E8D0057E5ED /* InteractiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveViewController.swift; sourceTree = "<group>"; };
+		38F97165202DC83E00C820A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6ABAAA08C0B5E246906D3643 /* Pods_LTiosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTiosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D3A809CBE0D3BB16C4D7CF /* Pods-LTiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTiosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTiosUITests/Pods-LTiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ACEF576580160AAA28DC6F2 /* Pods_LTios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F97166202DC83E00C820A5 /* MapKit.framework in Frameworks */,
 				9A502145D7C38C05BE014890 /* Pods_LTios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +221,7 @@
 			children = (
 				004289391F4A115F007FD732 /* Magnet */,
 				006BDCD41F2F88E9006DEF17 /* ScannerViewController.swift */,
+				38F41552201A795E0057E5ED /* UserProfileViewController.swift */,
 				006BDCD61F2F88F9006DEF17 /* WhereAreYouViewController.swift */,
 			);
 			name = Scanning;
@@ -359,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				006BDCE51F2F8A09006DEF17 /* Scanning.swift */,
+				38F41559201A7E8D0057E5ED /* InteractiveViewController.swift */,
 			);
 			name = Scanning;
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 		E46FE9E542005773D8AD582F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38F97165202DC83E00C820A5 /* MapKit.framework */,
 				9ACEF576580160AAA28DC6F2 /* Pods_LTios.framework */,
 				6ABAAA08C0B5E246906D3643 /* Pods_LTiosTests.framework */,
 				D63D386CE37523546D50354D /* Pods_LTiosUITests.framework */,
@@ -542,7 +552,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Tastyapp;
 				TargetAttributes = {
 					0007E4D61F1FECD700EBA50C = {
@@ -550,6 +560,14 @@
 						DevelopmentTeam = D8J97J3MM9;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0007E4ED1F1FECD700EBA50C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -647,9 +665,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LTios/Pods-LTios-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -662,13 +683,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTiosUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		322825D44C8D070E2781BD17 /* [CP] Embed Pods Frameworks */ = {
@@ -677,9 +701,44 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LTios/Pods-LTios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NexmoVerify/NexmoVerify.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Pulsator/Pulsator.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NexmoVerify.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulsator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,13 +796,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTios-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D060573470A0A6875F6AC1DA /* [CP] Check Pods Manifest.lock */ = {
@@ -752,13 +814,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTiosTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -779,10 +844,12 @@
 				00FF14E41FA7537B00D9F6FB /* ContactsSearchbar.swift in Sources */,
 				006BDCD11F2F88D4006DEF17 /* PlaceViewController.swift in Sources */,
 				006BDCE21F2F89FE006DEF17 /* Registering.swift in Sources */,
+				38F4155A201A7E8D0057E5ED /* InteractiveViewController.swift in Sources */,
 				006BDCEC1F2F8A25006DEF17 /* NearbyPlaces.swift in Sources */,
 				0042893F1F4A11CB007FD732 /* ScannerNode.swift in Sources */,
 				00FF14DE1FA7475D00D9F6FB /* Contact.swift in Sources */,
 				006BDCC31F2F8845006DEF17 /* RegisterationFormViewController.swift in Sources */,
+				38F41553201A795E0057E5ED /* UserProfileViewController.swift in Sources */,
 				006BDCD91F2F8961006DEF17 /* ContactProfileViewController.swift in Sources */,
 				38343E701F8B9DE400F4909E /* NearbyPlacesHeaderCollectionReusableView.swift in Sources */,
 				00EBDEA01F2159A100676E70 /* MainUser.swift in Sources */,
@@ -965,7 +1032,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-wextra",
 					"-wall",
@@ -986,7 +1053,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-wextra",
 					"-wall",

@@ -9,31 +9,31 @@
 import SpriteKit
 
 public class MagneticView: SKView {
-  
-  public lazy var magnetic: Magnetic = { [unowned self] in
-    let scene = Magnetic(size: self.bounds.size)
-    self.presentScene(scene)
-    return scene
-    }()
-  
-  override public init(frame: CGRect) {
-    super.init(frame: frame)
     
-    commonInit()
-  }
-  
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    public lazy var magnetic: Magnetic = { [unowned self] in
+        let scene = Magnetic(size: self.bounds.size)
+        self.presentScene(scene)
+        return scene
+        }()
     
-    commonInit()
-  }
-  
-  func commonInit() {
-    _ = magnetic
-  }
-  
-  public override func layoutSubviews() {
-    super.layoutSubviews()
-    magnetic.size = bounds.size
-  }
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        commonInit()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        commonInit()
+    }
+    
+    func commonInit() {
+        _ = magnetic
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        magnetic.size = bounds.size
+    }
 }

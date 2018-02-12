@@ -147,7 +147,7 @@ class ServiceExecutor {
             
             // remove empty values from query parameters
             for (key, value) in params {
-                if (value.characters.count == 0) {
+                if (value.count == 0) {
                     mutableParams[key] = nil
                 }
             }
@@ -216,7 +216,7 @@ class ServiceExecutor {
             
             // remove empty values from query parameters
             for (key, value) in params {
-                if (value.characters.count == 0) {
+                if (value.count == 0) {
                     mutableParams[key] = nil
                 }
             }

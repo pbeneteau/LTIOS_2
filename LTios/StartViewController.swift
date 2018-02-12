@@ -18,8 +18,7 @@ class StartViewController: UIViewController {
   
   let phoneNumberKit = PhoneNumberKit()
   
-  let bg = UIImageView(image: #imageLiteral(resourceName: "RegisterationBG"))
-  let world = UIImageView(image: #imageLiteral(resourceName: "World"))
+  let world = UIImageView(image: #imageLiteral(resourceName: "World v2"))
   let logo = LogoTitle()
   let slogan = Slogan()
   lazy var countrySelector: CountryButton = {
@@ -43,7 +42,6 @@ class StartViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.addSubview(bg)
     view.addSubview(world)
     view.addSubview(logo)
     view.addSubview(slogan)
@@ -84,16 +82,11 @@ class StartViewController: UIViewController {
   override func updateViewConstraints() {
     if !didSetupConstraints {
       
-      bg.snp.makeConstraints { (make) -> Void in
-        make.width.equalTo(view.snp.width)
-        make.height.equalTo(view.snp.height)
-        make.centerX.equalTo(view.snp.centerX)
-        make.centerY.equalTo(view.snp.centerY)
-      }
-      
       world.snp.makeConstraints { (make) -> Void in
         make.top.equalTo(view.snp.top)
         make.left.equalTo(view.snp.left)
+        make.height.equalTo(view.snp.height)
+        make.width.equalTo(view.snp.height).multipliedBy(1.8)
       }
       
       logo.snp.makeConstraints { (make) -> Void in
@@ -265,7 +258,7 @@ class StartViewController: UIViewController {
 extension StartViewController: UITextFieldDelegate {
   
   func initTextField(string: String) {
-    let protectedRange = NSMakeRange(0, countryCodeString.characters.count)
+    let protectedRange = NSMakeRange(0, countryCodeString.count)
     let attributedString = NSMutableAttributedString(string: countryCodeString)
     attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(red:0.93, green:0.94, blue:0.95, alpha:1.0), range: protectedRange)
     attributedString.append(NSAttributedString(string: string))
@@ -278,11 +271,11 @@ extension StartViewController: UITextFieldDelegate {
   
     @objc func textFieldChanged() {
     let partialFormatter = PartialFormatter(phoneNumberKit: phoneNumberKit, defaultRegion: selectedCountry, withPrefix: false)
-    let protectedRange = NSMakeRange(0, countryCodeString.characters.count)
+    let protectedRange = NSMakeRange(0, countryCodeString.count)
     let substring = phoneTextField.text!.index(phoneTextField.text!.startIndex, offsetBy: protectedRange.length)
     initTextField(string: partialFormatter.formatPartial(phoneTextField.text!.substring(from: substring)))
     
-    if (phoneTextField.text?.characters.count)! > protectedRange.length {
+    if (phoneTextField.text?.count)! > protectedRange.length {
       if nextButton.alpha != 1.0 {
         UIView.animate(withDuration: 0.1, delay: 0, options: [.curveLinear], animations: { () -> Void in
           self.nextButton.alpha = 1.0
@@ -298,7 +291,7 @@ extension StartViewController: UITextFieldDelegate {
   }
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    let protectedRange = NSMakeRange(0, countryCodeString.characters.count)
+    let protectedRange = NSMakeRange(0, countryCodeString.count)
     let intersection = NSIntersectionRange(protectedRange, range)
     if intersection.length > 0 {
       

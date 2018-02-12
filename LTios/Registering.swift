@@ -29,7 +29,7 @@ class LogoTitle: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "Little World"
     font = UIFont(name: "Roboto-Medium", size: 36)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     minimumScaleFactor = 0.5
   }
@@ -48,9 +48,9 @@ class Slogan: UILabel {
   
   func commonInit(){
     translatesAutoresizingMaskIntoConstraints = false
-    text = "Connect the world"
+    text = "Make the world even smaller"
     font = UIFont(name: "Roboto-Light", size: 16)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
   }
 }
@@ -84,9 +84,9 @@ class PhoneTextField: PhoneNumberTextField {
     commonInit()
   }
   
-  func commonInit(){
+  func commonInit() {
     translatesAutoresizingMaskIntoConstraints = false
-    textColor = .white
+    textColor = .gray
     font = UIFont(name: "Roboto-Regular", size: 20)
     borderStyle = .none
     keyboardType = .phonePad
@@ -108,11 +108,11 @@ class PhonePlaceHolder: UILabel {
     commonInit()
   }
   
-  func commonInit(){
+  func commonInit() {
     translatesAutoresizingMaskIntoConstraints = false
     text = " Enter your phone number"
     font = UIFont(name: "Roboto-Light", size: 16)
-    textColor = .white
+    textColor = .lightGray
     textAlignment = .center
     minimumScaleFactor = 0.2
     adjustsFontSizeToFitWidth = true
@@ -169,7 +169,7 @@ class verificationCodeLabel: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "Enter the verification code"
     font = UIFont(name: "Roboto-Light", size: 20)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     minimumScaleFactor = 0.5
   }
@@ -188,9 +188,8 @@ class DigitTextField: UITextField {
   
   func commonInit(){
     translatesAutoresizingMaskIntoConstraints = false
-    textColor = .white
     font = UIFont(name: "Roboto-Regular", size: 27)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     borderStyle = .none
     keyboardType = .phonePad
     keyboardAppearance = .light
@@ -225,7 +224,7 @@ class VerificationSuccessLabel: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "Success !"
     font = UIFont(name: "Roboto-Light", size: 14)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     minimumScaleFactor = 0.5
     alpha = 0.0
@@ -248,6 +247,25 @@ class BackButton: UIButton {
   }
 }
 
+
+class CodeSentView: UIView {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        commonInit()
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    func commonInit() {
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .black
+    }
+}
+
+
 // MARK: - Registeration Form
 
 class RegisterFormLabel: UILabel {
@@ -261,11 +279,11 @@ class RegisterFormLabel: UILabel {
     commonInit()
   }
   
-  func commonInit(){
+  func commonInit() {
     translatesAutoresizingMaskIntoConstraints = false
     text = "Fill the form to continue"
     font = UIFont(name: "Roboto-Light", size: 20)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     minimumScaleFactor = 0.5
   }
@@ -283,10 +301,15 @@ class RegisterForm: UIView {
     commonInit()
   }
   
-  func commonInit(){
+  func commonInit() {
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .white
     layer.cornerRadius = 5
+    
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.1
+    layer.shadowOffset = CGSize(width: 0, height: 4)
+    layer.shadowRadius = 5
   }
 }
 
@@ -306,11 +329,17 @@ class RegisterButton: UIButton {
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .white
     layer.cornerRadius = 5
-    clipsToBounds = true
+    //clipsToBounds = true
+    
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.1
+    layer.shadowOffset = CGSize(width: 0, height: 4)
+    layer.shadowRadius = 5
+    
     setBackgroundColor(color: UIColor(red:0.93, green:0.94, blue:0.95, alpha:1.0), forState: .highlighted)
     let numberAsString = "REGISTER"
     
-    let attributes = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: 15.0)!, NSAttributedStringKey.foregroundColor: UIColor.CustomColor.blue]
+    let attributes = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: 17.0)!, NSAttributedStringKey.foregroundColor: UIColor.CustomColor.blue]
     
     setAttributedTitle(NSAttributedString(string: numberAsString, attributes: attributes), for: .normal)
     
@@ -334,7 +363,7 @@ class RegisterAgreementsLabel: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "By clicking this button you agree our terms and conditions"
     font = UIFont(name: "Roboto-Light", size: 11)
-    textColor = .white
+    textColor = .gray
     textAlignment = .center
     minimumScaleFactor = 0.5
   }
@@ -358,7 +387,7 @@ class FirstContactLabel: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "Import your contacts"
     font = UIFont(name: "Roboto-Light", size: 20)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     minimumScaleFactor = 0.5
   }
@@ -380,7 +409,12 @@ class FirstImportButton: UIButton {
     translatesAutoresizingMaskIntoConstraints = false
     backgroundColor = .white
     layer.cornerRadius = 15
-    clipsToBounds = true
+    
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOpacity = 0.1
+    layer.shadowOffset = CGSize(width: 0, height: 4)
+    layer.shadowRadius = 5
+    
     setBackgroundColor(color: UIColor(red:0.93, green:0.94, blue:0.95, alpha:1.0), forState: .highlighted)
     let numberAsString = "IMPORT"
   let attributes = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: 15.0)!, NSAttributedStringKey.foregroundColor: UIColor.CustomColor.blue]
@@ -404,7 +438,7 @@ class FirstContactAgreementsLabel: UILabel {
     translatesAutoresizingMaskIntoConstraints = false
     text = "You will be able to manage your contact list in your profile"
     font = UIFont(name: "Roboto-Light", size: 14)
-    textColor = .white
+    textColor = UIColor(red:0.11, green:0.20, blue:0.35, alpha:1.0)
     textAlignment = .center
     numberOfLines = 3
     minimumScaleFactor = 0.5
